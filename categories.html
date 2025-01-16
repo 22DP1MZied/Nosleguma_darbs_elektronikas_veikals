@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preču Kategorijas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="logo-header">
+        <img src="images/logo.png" alt="Technorics Logo">
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Sākums</a></li>
+            <li><a href="today-deals.html">Šodienas piedāvājumi</a></li>
+            <li><a href="categories.html">Kategorijas</a></li>
+            <li><a href="about-us.html">Par mums</a></li>
+            <li><a href="contact.html">Kontakti</a></li>
+        </ul>
+    </nav>
+
+    <main class="categories-content">
+        <h1>Preču Kategorijas</h1>
+        <div class="categories-grid">
+            <a href="laptops.html" class="category-item">
+                <img src="images/laptops-category.jpg" alt="Klēpjdatori">
+                <p>Klēpjdatori</p>
+            </a>
+            <a href="smartphones.html" class="category-item">
+                <img src="images/smartphones-category.jpg" alt="Viedtālruņi">
+                <p>Viedtālruņi</p>
+            </a>
+            <a href="appliances.html" class="category-item">
+                <img src="images/appliances-category.jpg" alt="Sadzīves tehnika">
+                <p>Sadzīves tehnika</p>
+            </a>
+            <a href="audio.html" class="category-item">
+                <img src="images/audio-category.jpg" alt="Audio tehnika">
+                <p>Audio tehnika</p>
+            </a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Technorics - Elektronikas veikals</p>
+    </footer>
+
+    <!-- AI Palīgs -->
+    <div id="chatbot-container">
+        <button id="chatbot-toggle">AI Palīgs</button>
+        <div id="chatbot">
+            <div id="chatbot-header">Jautā AI Palīgam</div>
+            <div id="chatbot-messages"></div>
+            <input type="text" id="chatbot-input" placeholder="Uzdod jautājumu...">
+            <button id="chatbot-send">Sūtīt</button>
+        </div>
+    </div>
+</body>
+</html>

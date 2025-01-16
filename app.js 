@@ -1,0 +1,51 @@
+// Funkcija, kas ģenerē bot atbildes
+const botAnswers = {
+    "kas ir elektronika?": "Elektronika ir tehnoloģiju un ierīču kopums, kas izmanto elektriskos principus. Tas ietver datorus, mobilos telefonus, televizorus, mājas ierīces un daudz ko citu.",
+    "kas ir veikals?": "Mūsu veikals piedāvā plašu elektronikas produktu klāstu, sākot no portatīvajiem datoriem līdz televizoriem un mobilo telefonu piederumiem. Jūs varat apskatīt mūsu piedāvājumu tiešsaistē.",
+    "kā pasūtīt elektroniku?": "Lai iegādātos elektroniku, vienkārši izvēlieties produktu, pievienojiet to grozam un veiciet pasūtījumu. Mēs piedāvājam ērtu piegādi visā Latvijā.",
+    "kādas ir piegādes iespējas?": "Mēs piedāvājam vairākas piegādes opcijas, tostarp standarta un ekspress piegādi. Visas detaļas varat atrast mūsu piegādes lapā.",
+    "cik ilgā laikā saņemšu preci?": "Piegādes laiks atkarīgs no pasūtītās preces un izvēlētās piegādes metodes, parasti tas ir 1-3 darba dienas.",
+    "cik maksā piegāde?": "Piegādes izmaksas ir atkarīgas no jūsu pasūtījuma lieluma un atrašanās vietas. Precīzas izmaksas varat uzzināt pasūtījuma veikšanas laikā."
+};
+
+// Funkcija, kas nosūta ziņojumu
+function sendMessage() {
+    const userInput = document.getElementById('user-input').value.trim().toLowerCase();
+    const chatBody = document.getElementById('chat-body');
+
+    if (userInput !== "") {
+        const userMessage = document.createElement('div');
+        userMessage.classList.add('user-message');
+        userMessage.innerHTML = `<p>${userInput}</p>`;
+        chatBody.appendChild(userMessage);
+
+        // Meklē atbildi botā
+        const botResponse = botAnswers[userInput] || "Atvainojiet, es varu atbildēt tikai uz jautājumiem par elektroniku un mūsu veikalu.";
+
+        const botMessage = document.createElement('div');
+        botMessage.classList.add('bot-message');
+        botMessage.innerHTML = `<p>${botResponse}</p>`;
+        chatBody.appendChild(botMessage);
+
+        // Pārliecinās, ka pēdējais ziņojums ir redzams
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+        // Notīra ievades lauku
+        document.getElementById('user-input').value = "";
+    }
+}
+
+// Funkcija, kas aizver čata logu
+function closeChat() {
+    document.getElementById('chatbox').style.display = 'none';
+}
+
+// Funkcija, kas apstrādā meklēšanu
+function searchProducts() {
+    const searchInput = document.getElementById('search-input').value.trim().toLowerCase();
+    if (searchInput) {
+        alert(`Meklēt "${searchInput}"... Šī ir tikai demo funkcionalitāte, reālā meklēšana tiks veikta serverī.`);
+    } else {
+        alert("Lūdzu ievadiet meklēšanas atslēgvārdu.");
+    }
+}
